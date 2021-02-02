@@ -219,7 +219,7 @@ body {
 }
 
 .discover-page .information-text-img-container {
-  margin: 0 0 162px;
+  margin: 0 0 162px 162px;
   padding-right: 5%;
   min-width: fit-content;
 }
