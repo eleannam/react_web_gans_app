@@ -7,15 +7,15 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className ='wrapper'>
-      <div className = 'wrapper-img'>
+     <div className ='wrapper'>
+{/*       <div className = 'wrapper-img'>
         <Header />
         <LandingPage />
         <Footer />
-      </div> 
-{/*       <Header />
-      <Disc />
-      <Footer /> */}
+  </div>  */ }
+      <Header />
+      <Discover />
+      <Footer />  
     </div>
   );
 }
