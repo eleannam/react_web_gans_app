@@ -1,4 +1,4 @@
-function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired, className }) {
+function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired, className, checkboxLabel }) {
     const isTextArea = {inputType} ==='textarea';
 
     return (
@@ -16,6 +16,9 @@ function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired,
                 inputType={inputType}
                 inputRequired={inputRequired} />)
             }
+            { inputType === 'checkbox' ?
+                (<label for={inputName}>{checkboxLabel}</label>) : <></>
+            } 
         </div>
     )
 }

@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Discover from './components/Discover'
 import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
+import JoinUs from './components/JoinUs'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Footer />
   </div>  */ }
       <Header />
-      <Discover />
+      <Contact />
       <Footer />  
     </div>
   );
