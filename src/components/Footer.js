@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
+
 function Footer() {
     return (
-        <nav class='footer-nav'>
+        <nav className='footer-nav'>
             <ul className='menu-items'>
                 <li>
-                    <h>About Us</h>
+                    <Link to='/about'>About Us</Link>
                 </li>
                 <li>
-                    <h>Contact</h>
+                    <Link to='/contact'>Contact</Link>
                 </li>
                 <li>
-                    <h>Join Us</h>
+                    <Link to='join-us'>Join Us</Link>
                 </li> 
             </ul>
         </nav>

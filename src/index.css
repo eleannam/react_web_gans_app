@@ -58,7 +58,7 @@ body {
   float: right;
 }
 
-.desktop-nav .menu-items li h {
+.desktop-nav .menu-items li a {
     text-decoration: none;
     color: var(--text-fill);
     font-size: 24px;
@@ -98,7 +98,7 @@ body {
   margin: 25px 30px;
 }
 
-.footer-nav .menu-items li h {
+.footer-nav .menu-items li a {
     text-decoration: none;
     color: var(--text-fill);
     font-size: 24px;
@@ -323,6 +323,7 @@ body {
   align-items: flex-start;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   min-height: 100vh;
   padding-bottom: 20%;
   width: 100%;
@@ -351,6 +352,49 @@ body {
   font-size: 24px;
   padding: 10px 350px;
 }
+
+.join-us-page .text-already-registered-log-in {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  width: 790px;
+}
+
+/* Log In navigation */
+.log-in-page {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding-bottom: 20%;
+  width: 100%;
+}
+
+.log-in-page h1 {
+  color: var(--text-fill);
+  font-size: 72px;
+  margin-left: 206px;
+  margin-top: 15%;
+}
+
+.log-in-page .group-log-in-form {
+  align-items: flex-start;
+  background-color: var(--box-fill);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 162px;
+  margin-top: 85px;
+  min-height: 530px;
+  padding: 30px 29px;
+}
+
+.log-in-page .group-log-in-form button {
+  font-size: 24px;
+  padding: 20px 360px;
+}
+
 
 .enter-your- {
   background-color: transparent;
@@ -394,6 +438,19 @@ body {
   color: var(--text-fill);
   font-size: 24px;
   font-style: italic;
+  font-weight: 100;
+}
+
+.poppins-thin-white-regular-24px {
+  color: var(--text-fill);
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.text-link {
+  text-decoration: none;
+  color: var(--blue-color);
+  font-size: 24px;
   font-weight: 100;
 }
 

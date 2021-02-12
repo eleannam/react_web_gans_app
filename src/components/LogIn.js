@@ -2,17 +2,11 @@ import InputOverlapGroup from './InputOverlapGroup'
 import Button from './Button'
 import { Link } from 'react-router-dom';
 
-function JoinUs() {
+function LogIn() {
     return (
-        <div className='join-us-page'>
-            <h1>Join us now!</h1>
-            <form className='group-join-us-form'>
-                <InputOverlapGroup 
-                    label='Name:' 
-                    inputName='name'
-                    inputType='text'
-                    inputPlaceholder='Enter your name'
-                    inputRequired={true} />
+        <div className='log-in-page'>
+            <h1>Welcome!</h1>
+            <form className='group-log-in-form'>
                 <InputOverlapGroup 
                     label='Email:' 
                     inputName='email'
@@ -25,17 +19,15 @@ function JoinUs() {
                     inputType='password'
                     inputPlaceholder='Enter your password'
                     inputRequired={true} />
+                <Button className='button' label='Log In' onClick={handleClick}/>
                 <InputOverlapGroup 
-                    inputName='agree-terms-checkbox'
+                    inputName='remember-me-checkbox'
                     inputType='checkbox'
-                    inputRequired={true}
+                    inputRequired={false}
                     className='overlap-group-form-checkbox'
-                    checkboxLabel='I agree with the Terms & Conditions' />
-                <Button className='button' label='Sign Up' onClick={handleClick}/>
-                <div className='text-already-registered-log-in'>
-                    <span className='poppins-thin-white-regular-24px'>Already registered? </span>
-                    <Link className='text-link' to='/log-in'>Log In</Link>
-                </div>
+                    checkboxLabel='Remember me' />
+            
+                <span className='text-link'>Forgot Password?</span>
             </form>
         </div>
     )
@@ -46,4 +38,4 @@ function JoinUs() {
       }
 }
 
-export default JoinUs
+export default LogIn

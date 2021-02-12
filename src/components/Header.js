@@ -1,20 +1,27 @@
 import Button from './Button'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
         <nav className='desktop-nav'>
             <ul className='menu-items'>
                 <li>
-                    <h>About Us</h>
+                    <Link to='/'>Home</Link>
+                </li>
+
+                <li>
+                    <Link to='/about'>About Us</Link>
                 </li>
                 <li>
-                    <h>Discover</h>
+                    <Link to='/discover'>Discover</Link>
                 </li>
                 <li>
-                    <h>Start</h>
+                    <Link to='/start'>Start</Link>
                 </li>
                 <li>
-                    <Button label='Join Us' className='button'/>
+                    <Link to='/join-us'>
+                        <Button label='Join Us' className='button'/>
+                    </Link>
                 </li> 
             </ul>
         </nav>   

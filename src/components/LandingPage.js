@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Button from './Button'
 
 function LandingPage() {
@@ -9,7 +10,9 @@ function LandingPage() {
             <div className='landing-page-description-text'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non sapien magna. Aliquam interdum nunc.
             </div>
-            <Button label='Start Now' className='button'/>
+            <Link to='/start'>
+                <Button label='Start Now' className='button'/>
+            </Link>
         </div>
     )
 }

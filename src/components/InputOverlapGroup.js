@@ -1,7 +1,7 @@
 import ContactForm from './ContactForm'
 import InputComponent from './InputComponent' 
 
-function InputOverlapGroup({label, className, inputName, inputPlaceholder, inputType, inputRequired, checkboxLabel}) {
+function InputOverlapGroup({label, className, inputName, inputPlaceholder, inputType, inputRequired, checkboxLabel, linkLabel}) {
     return (
         <div className='label-input-group'>
             { label && <label>{label}</label> }
@@ -13,6 +13,7 @@ function InputOverlapGroup({label, className, inputName, inputPlaceholder, input
                     inputType={inputType}
                     inputRequired={inputRequired}
                     checkboxLabel={checkboxLabel}
+                    linkLabel={linkLabel}
                 />
                 <div className={`rectangle-${inputName==='message' ? 'message' : ''} fun-blue-border-4px`}></div>
             </div>
