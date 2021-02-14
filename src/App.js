@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from 'react-router-dom'
+import ProvideAuth from './components/use-auth'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
 import AboutUs from './components/AboutUs'
@@ -11,8 +12,14 @@ import ScrollToTopRoute from './components/ScrollToTopRoute'
 
 function App() {
   const location = useLocation();
+  const query = useQuery();
+
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
   return (
+    <ProvideAuth>
       <div className ='wrapper'>
         <div className = {location.pathname === '/' ? 'wrapper-img' : ''}>
           <Header />
@@ -27,6 +34,7 @@ function App() {
           <Footer />
         </div>  
       </div>
+    </ProvideAuth>
   );
 }
 

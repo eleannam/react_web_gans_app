@@ -1,7 +1,11 @@
 import Button from './Button'
 import { Link } from 'react-router-dom'
+import { BiUserCircle } from 'react-icons/bi'
+import { useAuth } from './use-auth'
 
-function Header() {
+function Header({ name }) {
+    const auth = useAuth();
+
     return (
         <nav className='desktop-nav'>
             <ul className='menu-items'>
@@ -19,9 +23,14 @@ function Header() {
                     <Link to='/start'>Start</Link>
                 </li>
                 <li>
-                    <Link to='/join-us'>
+                    {auth.user ? 
+                    (
+                        <BiUserCircle className='user-option-button'/>
+                    ) :
+                    (<Link to='/join-us'>
                         <Button label='Join Us' className='button'/>
-                    </Link>
+                    </Link>)
+                    }
                 </li> 
             </ul>
         </nav>   

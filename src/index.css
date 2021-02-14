@@ -489,3 +489,10 @@ input:focus, textarea:focus, select:focus, button:focus{
 	left: 3px;
 	color: var(--text-fill);
 }
+
+.desktop-nav .menu-items li .user-option-button {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  color: white;
+}

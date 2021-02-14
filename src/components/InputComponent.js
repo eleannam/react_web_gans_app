@@ -1,4 +1,4 @@
-function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired, className, checkboxLabel, linkLabel }) {
+function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired, className, checkboxLabel, onChange }) {
 
     return (
         <div>
@@ -7,13 +7,15 @@ function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired,
                 className={className}
                 inputName={inputName}
                 inputPlaceholder={inputPlaceholder}
-                inputRequired={inputRequired} />) :
+                inputRequired={inputRequired}
+                onChange={onChange} />) :
                 (<InputField
                 className={className}
                 inputName={inputName}
                 inputPlaceholder={inputPlaceholder}
                 inputType={inputType}
-                inputRequired={inputRequired} />)
+                inputRequired={inputRequired}
+                onChange={onChange} />)
             }
             { inputType === 'checkbox' ?
                 (<label htmlFor={inputName}>
@@ -24,24 +26,26 @@ function InputComponent({ inputName, inputType, inputPlaceholder, inputRequired,
     )
 }
 
-function TextAreaInputField({ inputName, inputPlaceholder, inputRequired, className }) {
+function TextAreaInputField({ inputName, inputPlaceholder, inputRequired, className, onChange }) {
     return (
         <textarea
                 className={className}
                 name={inputName}
                 placeholder={inputPlaceholder}
-                required={inputRequired} />
+                required={inputRequired}
+                onChange={onChange} />
     )
 }
 
-function InputField({ inputName, inputType, inputPlaceholder, inputRequired, className }) {
+function InputField({ inputName, inputType, inputPlaceholder, inputRequired, className, onChange }) {
     return (
         <input
                 className={className}
                 name={inputName}
                 placeholder={inputPlaceholder}
                 type={inputType}
-                required={inputRequired} />
+                required={inputRequired}
+                onChange={onChange} />
     )
 }
 
