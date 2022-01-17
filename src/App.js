@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import JoinUs from './components/JoinUs'
 import LogIn from './components/LogIn'
 import Contact from './components/Contact'
+import Start from './components/Start'
 import ScrollToTopRoute from './components/ScrollToTopRoute'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <ScrollToTopRoute path='/' exact component={LandingPage} />
             <ScrollToTopRoute path='/about' component={AboutUs} />
             <ScrollToTopRoute path='/discover' component={Discover} />
+            <ScrollToTopRoute path='/start' component={Start} />
             <ScrollToTopRoute path='/join-us' component={JoinUs} />
             <ScrollToTopRoute path='/log-in' component={LogIn} />
             <ScrollToTopRoute path='/contact' component={Contact} />

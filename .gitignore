@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+/api
+/nodejs/node_modules
+/nodejs/class_vectors.npy
 
 # testing
 /coverage
