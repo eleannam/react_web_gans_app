@@ -10,10 +10,14 @@ import LogIn from './components/LogIn'
 import Contact from './components/Contact'
 import Start from './components/Start'
 import ScrollToTopRoute from './components/ScrollToTopRoute'
+import useToken from './components/useToken'
+import { useEffect } from 'react'
 
 function App() {
   const location = useLocation();
   const query = useQuery();
+
+  const { token, setToken } = useToken();
 
   function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -21,20 +25,25 @@ function App() {
 
   return (
     <ProvideAuth>
-      <div className ='wrapper'>
-        <div className = {location.pathname === '/' ? 'wrapper-img' : ''}>
-          <Header />
+      <div className='wrapper'>
+        <div className={location.pathname === '/' ? 'wrapper-img' : ''}>
+          <Header token={token} />
           <Switch>
             <ScrollToTopRoute path='/' exact component={LandingPage} />
             <ScrollToTopRoute path='/about' component={AboutUs} />
             <ScrollToTopRoute path='/discover' component={Discover} />
             <ScrollToTopRoute path='/start' component={Start} />
-            <ScrollToTopRoute path='/join-us' component={JoinUs} />
-            <ScrollToTopRoute path='/log-in' component={LogIn} />
+            {!token &&
+              <ScrollToTopRoute path='/join-us' component={JoinUs} setToken={setToken}/>
+            }
+            {!token &&
+              <ScrollToTopRoute path='/log-in' component={LogIn} setToken={setToken}/> 
+            }
+
             <ScrollToTopRoute path='/contact' component={Contact} />
           </Switch>
-          <Footer />
-        </div>  
+            <Footer token={token} setToken={setToken}/>
+        </div>
       </div>
     </ProvideAuth>
   );

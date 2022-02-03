@@ -3,29 +3,42 @@ import InputOverlapGroup from './InputOverlapGroup'
 import Button from './Button'
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from './use-auth'
+import { useHistory } from "react-router-dom";
 
-function JoinUs() {
+async function joinUser(credentials) {
+    return fetch('/joinus', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+    })
+        .then(data => data.json())
+}
+
+function JoinUs({ setToken }) {
+    let history = useHistory();
+
     const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
     const auth = useAuth();
 
-    const onSubmit = (e) => {
-        e.preventDefault()
-
-        setName('')
-        setEmail('')
-        setPassword('')
-    }
-
-    const signup = () => {
-        auth.signin({name});
+    const handleSubmit = async e => {
+        console.log('on submit');
+        e.preventDefault();
+        const token = await joinUser({
+            email,
+            password
+        });
+        setToken(token);
+        history.push('/');
     }
 
     return (
         <div className='join-us-page'>
             <h1>Join us now!</h1>
-            <form className='group-join-us-form' onSubmit={onSubmit}>
+            <form className='group-join-us-form' onSubmit={handleSubmit}>
                 <InputOverlapGroup 
                     label='Name:' 
                     inputName='name'
@@ -53,9 +66,7 @@ function JoinUs() {
                     inputRequired={true}
                     className='overlap-group-form-checkbox'
                     checkboxLabel='I agree with the Terms & Conditions' />
-                <Link to ='/'>
-                <   Button className='button' label='Sign Up' type='submit' onClick={signup}/>
-                </Link>
+                <Button className='button' label='Sign Up' type='submit'/>
                 <div className='text-already-registered-log-in'>
                     <span className='poppins-thin-white-regular-24px'>Already registered? </span>
                     <Link className='text-link' to='/log-in'>Log In</Link>
@@ -63,11 +74,6 @@ function JoinUs() {
             </form>
         </div>
     )
-
-    function handleClick(e) {
-        e.preventDefault();
-        console.log('The button was clicked.');
-      }
 }
 
 export default JoinUs

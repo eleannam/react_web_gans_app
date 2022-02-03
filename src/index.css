@@ -497,3 +497,109 @@ input:focus, textarea:focus, select:focus, button:focus{
   width: 70px;
   color: white;
 }
+
+/* Start Page navigation */
+.start-page-div {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding-bottom: 10%;
+  width: 100%;
+}
+
+.start-page-div .submit-button{
+  background: var(--blue-color);
+  border-style: none;
+  color: var(--text-fill);
+  border-radius: 10.9135px;
+  font-size: 16px;
+  height: 40px;
+  width: 150px;
+}
+
+.start-page-div .upload-file-form {
+  align-items: flex-start;
+  background-color: var(--box-fill);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 162px;
+  padding: 18px 14px;
+  width: fit-content;
+  margin-bottom: 26px;
+}
+
+.start-page-div .upload-file-form label {
+  color: var(--text-fill);
+  font-size: 16px;
+  font-style: normal;
+}
+
+.video-div {
+  align-items: flex-start;
+  background-color: var(--box-fill);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 162px;
+  padding: 18px 14px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.start-page-div .loader-div {
+  background-color: var(--box-fill);
+  border-radius: 20px;
+  display: flex;
+  margin-left: 162px;
+  padding: 167px 14px;
+  width: 668px;
+  height: 396px;
+  position: relative;
+  justify-content: center;
+}
+
+.upload-box {
+  font-size: 16px;
+  width: 640px;
+  height: 40px;
+  outline: none;
+  color: var(--text-fill);
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+
+::-webkit-file-upload-button {
+  background: var(--blue-color);
+  border-style: none;
+  color: var(--text-fill);
+  border-radius: 10.9135px;
+  font-size: 16px;
+  height: 40px;
+  width: 150px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  margin: 13px;
+}
+
+.rating img {
+  padding-left: 22px;
+}
+
+.rating h {
+  color: var(--text-fill);
+  font-size: 16px;
+  font-style: normal;
+}
+
+.upload-file-form p{
+  color: red;
+  font-size: 16px;
+  font-style: normal;
+
+}

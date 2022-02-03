@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { BiUserCircle } from 'react-icons/bi'
 import { useAuth } from './use-auth'
 
-function Header({ name }) {
+
+function Header({ token }) {
     const auth = useAuth();
 
     return (
@@ -22,7 +23,7 @@ function Header({ name }) {
                 <li>
                     <Link to='/start'>Start</Link>
                 </li>
-                <li>
+                {/* <li>
                     {auth.user ? 
                     (
                         <BiUserCircle className='user-option-button'/>
@@ -31,7 +32,18 @@ function Header({ name }) {
                         <Button label='Join Us' className='button'/>
                     </Link>)
                     }
-                </li> 
+                </li>  */}
+                <li>
+                    {token ? 
+                    (
+                        <BiUserCircle className='user-option-button'/>
+                    ) :
+                    (<Link to='/join-us'>
+                        <Button label='Join Us' className='button'/>
+                    </Link>)
+                    }
+                </li>
+
             </ul>
         </nav>   
     )
